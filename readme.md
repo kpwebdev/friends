@@ -12,7 +12,7 @@ Step 2) Run `npm start` to start the express server
 
 ### Get all the friends
 
-```
+```javascript
 fetch(`${FRIENDS_API}`)
 .then(response => response.json())
 .then(friends => console.log(friends))
@@ -20,7 +20,7 @@ fetch(`${FRIENDS_API}`)
 
 ### Get a friend for the specified id
 
-```
+```javascript
 fetch(`${FRIENDS_API}/${FRIEND_ID}`)
 .then(response => response.json())
 .then(friends => console.log(friends))
@@ -28,7 +28,7 @@ fetch(`${FRIENDS_API}/${FRIEND_ID}`)
 
 ### Post a new friend
 
-```
+```javascript
 fetch(`${FRIENDS_API}`, {
     headers: {"Content-Type": "application/json"},
     method: "POST",
@@ -40,7 +40,7 @@ fetch(`${FRIENDS_API}`, {
 
 ### Delete a friend for the specified id
 
-```
+```javascript
 fetch(`${FRIENDS_API}/${FRIEND_ID}`, {
     method: "DELETE"
 })
