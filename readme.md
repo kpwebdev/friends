@@ -13,7 +13,7 @@ Step 2) Run `npm start` to start the express server
 ### Get all the friends
 
 ```javascript
-fetch(`${FRIENDS_API}`)
+fetch(`FRIENDS_API)
 .then(response => response.json())
 .then(friends => console.log(friends))
 ```
@@ -29,10 +29,22 @@ fetch(`${FRIENDS_API}/${FRIEND_ID}`)
 ### Post a new friend
 
 ```javascript
-fetch(`${FRIENDS_API}`, {
+fetch(FRIENDS_API, {
     headers: {"Content-Type": "application/json"},
     method: "POST",
     body: JSON.stringify(FRIEND_DATA)
+})
+.then(response => response.json())
+.then(friends => console.log(friends))
+```
+
+### Update (PATCH) a new friend
+
+```javascript
+fetch(`${FRIENDS_API}/${FRIEND_ID}`, {
+    headers: {"Content-Type": "application/json"},
+    method: "PATCH", // PATCH METHOD
+    body: JSON.stringify(FRIEND_DATA_TOBE_UPDATED)
 })
 .then(response => response.json())
 .then(friends => console.log(friends))
